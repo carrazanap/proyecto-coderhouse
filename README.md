@@ -134,7 +134,7 @@ $ docker exec -it coderhouse_db bash
 ```
 Comando para consultar por la tabla cargada y ver 10 registros
 ```
-$ psql -d postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:${DB_PORT}/database -c "select * from happiness limit 10"
+$ psql -d postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:${DB_PORT}/${POSTGRES_DB} -c "select * from happiness limit 10"
 ```
 ![postgresql](https://user-images.githubusercontent.com/17929994/184786261-a5f3d109-bbb5-4106-b9d8-5ac3145c49f5.jpg)
 
