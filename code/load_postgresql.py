@@ -6,9 +6,10 @@ import os
 POSTGRES_USER = os.environ.get("POSTGRES_USER")
 POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
 DB_PORT = os.environ.get("DB_PORT")
+POSTGRES_DB = os.environ.get("POSTGRES_DB")
 
 #Creo conexion con la base de datos  
-conn_string = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@db:{DB_PORT}/database'
+conn_string = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@db:{DB_PORT}/{POSTGRES_DB}'
   
 db = create_engine(conn_string)
 conn = db.connect()
