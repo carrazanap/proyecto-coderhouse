@@ -1,6 +1,6 @@
 # Proyecto Coderhouse 🚀
  
-El objetivo del proyecto es la carga de archivos y transformarlos para posteriormente insertarlos en una tabla en postgresql y en un bucket de AWS S3. Finalmente mostrar visualizaciones analizando los datos.
+El objetivo del proyecto es la carga de archivos y uso de una API para agregar columnas y transformarlos para posteriormente insertarlos en una tabla en postgresql y en un bucket de AWS S3. Finalmente mostrar visualizaciones analizando los datos.
  
 # Datasets 📕
  
