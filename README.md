@@ -16,8 +16,6 @@ https://nominatim.org/release-docs/latest/
 # Arquitectura 👷‍♂️
  
 <img src="./images/arq_it.jpg" alt="Arquitectura IT" title="Arquitectura IT">
-
-![Arquitectura IT](./images/arq_it.jpg "Arquitectura IT")
  
 Estructura de archivos
  
