@@ -1,7 +1,6 @@
 # Proyecto Coderhouse 🚀
  
 El objetivo del proyecto es la carga de archivos y transformarlos para posteriormente insertarlos en una tabla en postgresql y en un bucket de AWS S3. Finalmente mostrar visualizaciones analizando los datos.
-Como agregado se ag
  
 # Datasets 📕
  
@@ -17,6 +16,8 @@ https://nominatim.org/release-docs/latest/
 # Arquitectura 👷‍♂️
  
 <img src="./images/arq_it.jpg" alt="Arquitectura IT" title="Arquitectura IT">
+
+![Arquitectura IT](./images/arq_it.jpg "Arquitectura IT")
  
 Estructura de archivos
  
