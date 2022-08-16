@@ -14,12 +14,12 @@ https://nominatim.org/release-docs/latest/
 ```
  
 # Arquitectura 👷‍♂️
- 
-<img src="./images/arq_it.jpg" alt="Arquitectura IT" title="Arquitectura IT">
+
+![arq_it](https://user-images.githubusercontent.com/17929994/184785715-73172544-1be7-4842-bd5e-6aa200ae7ab7.jpg)
  
 Estructura de archivos
- 
-<img src="./images/arq_folder.jpg" alt="Arquitectura folder" title="Arquitectura folder">
+
+![arq_folder](https://user-images.githubusercontent.com/17929994/184785804-f4c99f5a-69e2-4506-90e1-e4d66c3e5713.jpg)
  
 # Instalar y ejecutar 🔧
  
@@ -42,8 +42,8 @@ Puedo validar que se están ejecutando con el siguiente comando
 ```
 $ docker ps
 ```
-<img src="./images/docker_ps.jpg" alt="docker ps" title="docker ps">
- 
+![docker_ps](https://user-images.githubusercontent.com/17929994/184785851-e56051b1-b690-45b4-81b9-10f55d1eb49b.jpg)
+
 ## Ingreso al bash para ejecutar cada archivo python por separado
 ```
 $ docker exec -it coderhouse_app bash
@@ -53,14 +53,14 @@ $ docker exec -it coderhouse_app bash
 ```
 $ python transform_files.py
 ```
-<img src="./images/transform_files.jpg" alt="Transform files" title="Transform files">
+![transform_files](https://user-images.githubusercontent.com/17929994/184785908-67fcf406-3c4e-4c03-b956-bd75ceee7d67.jpg)
  
 ## Al archivo anterior, agrego el uso de la API Nominatim para agregar latitud y longitud de los diferentes paises
 El proceso demora aproximadamente unos 15 min, el archivo Happiness_final.csv ya se encuentra dentro de /files
 ```
 $ python transform_api.py
 ```
-<img src="./images/transform_api.jpg" alt="Transform API" title="Transform API">
+![transform_api](https://user-images.githubusercontent.com/17929994/184785956-f6346b79-36e7-4fe2-b3ac-6ba251790e55.jpg)
  
 El proceso demora aproximadamente unos 15 min, el archivo Happiness_final.csv ya se encuentra dentro de /data
  
@@ -70,7 +70,7 @@ Válido que la conexión es correcta
 ```
 $ python conn_postgresql.py
 ```
-<img src="./images/conn_postgresql.jpg" alt="connection postgresql" title="connection postgresql">
+![conn_postgresql](https://user-images.githubusercontent.com/17929994/184786025-81627d6b-7de7-4de1-b0bf-02d0afc75ad9.jpg)
  
 Cargo el dataset en la tabla happiness
 ```
@@ -86,11 +86,11 @@ $ python select_postgresql.py
 ```
 $ python load_s3.py
 ```
-<img src="./images/load_s3.jpg" alt="load s3" title="load s3">
+![load_s3](https://user-images.githubusercontent.com/17929994/184786063-0c6b5787-9efc-4593-9e9a-cd6d0f54018b.jpg)
  
 Desde la interfaz de AWS se ve de la siguiente manera
  
-<img src="./images/aws_s3.jpg" alt="AWS s3" title="AWS s3">
+![aws_s3](https://user-images.githubusercontent.com/17929994/184786105-911dc7d3-bdad-4c91-8707-a799a62b8a3b.jpg)
  
 ## Visualizaciones 📈
  
@@ -104,11 +104,11 @@ http://localhost:8052/
 ```
 El primer gráfico es un mapa donde se muestra cada país con sus respectivo Score y también de esto depende el tamaño del punto
  
-<img src="./images/dashboard_1.jpg" alt="Dashboard 1" title="Dashboard 1">
+![dashboard_1](https://user-images.githubusercontent.com/17929994/184786149-8ab63c66-8ac2-4eb2-bb01-f6f4ff2ca067.jpg)
  
 En el segundo gráfico es de líneas y se observa los distintos índices, y se puede filtrar por cada país
  
-<img src="./images/dashboard_2.jpg" alt="Dashboard 2" title="Dashboard 2">
+![dashboard_2](https://user-images.githubusercontent.com/17929994/184786179-b56c3b6e-843a-4cef-a451-5745805bdcb4.jpg)
  
 ## Machine Learning
  
@@ -116,7 +116,7 @@ Se corrieron dos modelos LinearRegression y GradientBoostingRegressor, donde el 
 ```
 $ python machine_learning.py
 ```
-<img src="./images/ml.jpg" alt="ML" title="ML">
+![ml](https://user-images.githubusercontent.com/17929994/184786206-e435ce59-c76d-4561-a026-9cd119d2f942.jpg)
 
 ## Jupyterlab
  
@@ -124,7 +124,7 @@ Si se desea correr el notebook, esta corriendo jupyterlab en el siguiente puerto
 ```
 http://localhost:8888/
 ```
-<img src="./images/jupyter.jpg" alt="jupyter" title="jupyter">
+![jupyter](https://user-images.githubusercontent.com/17929994/184786229-faad10f1-7561-4743-b300-002db66e8d5d.jpg)
 
 ## Si se desea se puede entrar al contenedor de la base de datos postgress y validar la tabla
  
@@ -135,8 +135,8 @@ Comando para consultar por la tabla cargada y ver 10 registros
 ```
 $ psql -d postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:${DB_PORT}/database -c "select * from happiness limit 10"
 ```
-<img src="./images/postgresql.jpg" alt="Select postgresql" title="select postgresql">
- 
+![postgresql](https://user-images.githubusercontent.com/17929994/184786261-a5f3d109-bbb5-4106-b9d8-5ac3145c49f5.jpg)
+
 # Conclusión ✒️
 
 Con respecto a lo que fue el dataset, mi hipotesis se confirmo en el analisis y posteriormente en las visualizaciones ya que los paises con un Score de felicidad mas alto son paises europeos, de America del Norte y en Oceanía. Otro punto que me llamo la atencíon fue que un pais potencia como China presento indices bajos.  
