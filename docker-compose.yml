@@ -1,0 +1,53 @@
+version: '3.7'
+services:
+  db:
+    image: postgres:14.1-alpine
+    container_name: coderhouse_db
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_PORT=${DB_PORT}
+    ports:
+      - '5433:5433'
+    volumes: 
+      - db:/var/lib/postgresql/data
+    command: postgres -p 5433
+  
+  app:
+    build: ./
+    container_name: coderhouse_app
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_PORT=${DB_PORT}
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SECRET_KEY=${AWS_SECRET_KEY}
+    ports:
+      #Puerto DASH
+      - '8052:8051'
+    command: python dashboard.py
+    volumes: 
+      - data:/code/data
+
+  jupyter:
+    build: ./
+    container_name: coderhouse_jupyter
+    environment:
+      - JUPYTER_ENABLE_LAB=${JUPYTER_ENABLE_LAB}
+      - JUPYTER_TOKEN=${JUPYTER_TOKEN}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_PORT=${DB_PORT}
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SECRET_KEY=${AWS_SECRET_KEY}
+    ports:
+      #Puerto Jupyter
+      - '8888:8888'
+    command: jupyter lab --ip=0.0.0.0 --allow-root --no-browser
+    volumes: 
+      - data:/code/data
+  
+volumes:
+  db:
+  data:
